@@ -13,6 +13,7 @@ use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginBase;
 use pocketmine\plugin\PluginManager;
 use pocketmine\Server;
+use pocketmine\nbt\tag\DoubleTag;
 use pocketmine\utils\Config;
 
 class GrapplingHook extends PluginBase implements Listener{
