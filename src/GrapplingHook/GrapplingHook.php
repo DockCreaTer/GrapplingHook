@@ -27,8 +27,9 @@ class GrapplingHook extends PluginBase implements Listener{
 	*/
 	@Override
     public function onEnable(){
-	FileConfiguration config;
-		
+	$this->getserver()->getPluginManager()->registerEvents($this,$this);
+	    @mkdir($this->getDataFolder());
+	    	$this->start= new Config($this->getDataFolder()."Config.yml", Config::YMAL, array());
 		$config = getConfig();
 		$hookThreshold = config->getDouble("hook-threshold");
 		$hForceMult = config->getDouble("horizontal-force-mult");
@@ -36,13 +37,11 @@ class GrapplingHook extends PluginBase implements Listener{
 		$vForceMult = config->getDouble("vertical-force-mult");
 		$vForceBonus = config->getDouble("vertical-force-bonus");
 		$vForceMax = config->getDouble("vertical-force-max");
-		
 		$this->saveDefaultConfig();
-	
-		$this->getServer()->getPluginManager()->registerEvents(this, this);
+	    		$this->getLogger()->info(TEXTFORMAT::GOLD . "§cTSR.TW§e星童插件組 §6GrapplingHook 飛天鉤加載中");
 	}
     public function onDisable(){
-        $this->getLogger()->info("§a飛天鉤(GrapplingHook)已關閉");
+        $this->getLogger()->info(TEXTFORMAT::RED . "GrapplingHook 飛天鉤卸載");
     }
     
     public function onPlayerFish(PlayerFishEvent event){
