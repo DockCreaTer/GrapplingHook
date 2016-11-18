@@ -30,12 +30,12 @@ class GrapplingHook extends PluginBase implements Listener{
 	    @mkdir($this->getDataFolder());
 	    	$this->start= new Config($this->getDataFolder()."Config.yml", Config::YMAL, array());
 		$config = getConfig();
-		$hookThreshold = config->getDouble("hook-threshold");
-		$hForceMult = config->getDouble("horizontal-force-mult");
-		$hForceMax = config->getDouble("horizontal-force-max");
-		$vForceMult = config->getDouble("vertical-force-mult");
-		$vForceBonus = config->getDouble("vertical-force-bonus");
-		$vForceMax = config->getDouble("vertical-force-max");
+		$hookThreshold = new DoubleTag("hook-threshold");
+		$hForceMult = new DoubleTag("horizontal-force-mult");
+		$hForceMax = new DoubleTag("horizontal-force-max");
+		$vForceMult = new DoubleTag("vertical-force-mult");
+		$vForceBonus = new DoubleTag("vertical-force-bonus");
+		$vForceMax = new DoubleTag("vertical-force-max");
 		$this->saveDefaultConfig();
 	    		$this->getLogger()->info(TEXTFORMAT::GOLD . "§cTSR.TW§e星童插件組 §6GrapplingHook 飛天鉤加載中");
 	}
