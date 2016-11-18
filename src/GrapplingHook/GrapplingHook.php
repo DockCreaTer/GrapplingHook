@@ -43,7 +43,7 @@ class GrapplingHook extends PluginBase implements Listener{
         $this->getLogger()->info(TEXTFORMAT::RED . "GrapplingHook 飛天鉤卸載");
     }
     
-    public function onPlayerFish(PlayerFishEvent event){
+    public function onPlayerFish($PlayerFishEvent $event){
 	       /*
 	        Vector = vector3;
 		Entity = entity;
