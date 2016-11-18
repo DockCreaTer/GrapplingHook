@@ -25,7 +25,6 @@ class GrapplingHook extends PluginBase implements Listener{
 	double vForceBonus;
 	double vForceMax;
 	*/
-	@Override
     public function onEnable(){
 	$this->getserver()->getPluginManager()->registerEvents($this,$this);
 	    @mkdir($this->getDataFolder());
